@@ -1,2 +1,0 @@
-cd %CD%
-java sound

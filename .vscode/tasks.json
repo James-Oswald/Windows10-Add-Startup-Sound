@@ -1,0 +1,28 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "echo build complete",
+            "dependsOn": [
+                "compile",
+                "pack"
+            ],
+            "dependsOrder": "sequence",
+            "problemMatcher": []
+        },
+        {
+            "label": "pack",
+            "type": "shell",
+            "command": "jar cvfm ./build/startsound.jar ./src/manifest.mf -C tmp . -C src sounds"
+        },
+        {
+            "label": "compile",
+            "type": "shell",
+            "command": "javac -d tmp src/sound.java"
+        }
+    ]
+}
