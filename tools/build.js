@@ -14,7 +14,7 @@ function main(){
         cp.execSync("node ./tmp/converter.js startsound.jar");
         fs.copyFileSync("./build/startsound.jar", "./build/startsound.jar");
         fs.copyFileSync("./tmp/startsound.exe", "./build/startsound.exe");
-        //fs.rmdirSync("./tmp", {recursive: true});
+        fs.rmdirSync("./tmp", {recursive: true});
     }catch(err){
         console.error(err);
     }
