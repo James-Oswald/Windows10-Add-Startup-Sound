@@ -9,7 +9,9 @@
             "command": "echo build complete",
             "dependsOn": [
                 "compile",
-                "pack"
+                "pack",
+                "move bat",
+                "move vbs"
             ],
             "dependsOrder": "sequence",
             "problemMatcher": []
@@ -23,6 +25,16 @@
             "label": "compile",
             "type": "shell",
             "command": "javac -d tmp src/sound.java"
+        },
+        {
+            "label": "move bat",
+            "type": "shell",
+            "command": "copy /y ${workspaceFolder}\\src\\startsound.bat ${workspaceFolder}\\build\\startsound.bat"
+        },
+        {
+            "label": "move vbs",
+            "type": "shell",
+            "command": "copy /y ${workspaceFolder}\\src\\startsound.vbs ${workspaceFolder}\\build\\startsound.vbs"
         }
     ]
 }
